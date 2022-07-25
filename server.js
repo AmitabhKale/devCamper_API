@@ -4,6 +4,7 @@ const colors = require('colors')
 
 // Route Files
 const bootcamps = require('./routes/bootcampRoutes');
+
 // connect DB Route
 const connectDB = require('./config/db');
 
@@ -15,9 +16,9 @@ connectDB()
 
 const app = express()
 
-app.get('/' , (req,res) => {
-    res.send("Hello World API...")
-})
+// Body Parser
+app.use(express.json())
+
 
 // Dev logging middleware
 if(process.env.NODE_ENV === 'development'){
