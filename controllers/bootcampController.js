@@ -48,6 +48,7 @@ const createBootcamp = async (req,res) => {
         })
     } catch (error) {
         res.status(400).json({ success: false })
+        console.log(error)
     }
 }
 

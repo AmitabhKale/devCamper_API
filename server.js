@@ -4,6 +4,7 @@ const colors = require('colors')
 
 // Route Files
 const bootcamps = require('./routes/bootcampRoutes');
+const errorHandler = require('./middleware/errorMiddleware') 
 
 // connect DB Route
 const connectDB = require('./config/db');
@@ -27,6 +28,9 @@ if(process.env.NODE_ENV === 'development'){
 
 // Mount routers
 app.use('/api/v1/bootcamp', bootcamps)
+
+// Error Handler Middleware
+app.use(errorHandler);
 
 const PORT = 5000;
 
